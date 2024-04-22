@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Pannellum } from 'pannellum-react';
 import {data,Data, HostspotsInt, hotspots} from '../data'
+import { speak } from '../functions/tts';
 const PanoramaViewer = () => {
     const id=window.location.pathname.replace("/image/", "");
     const myObj:Data[]=data.filter(item=>item.id===Number(id));
@@ -9,6 +10,7 @@ const PanoramaViewer = () => {
 console.log(currentImage)
   const handleHotspotClick = (image) => {
     // Update the image URL based on the clicked hotspot
+    speak('Changing the image')
 setCurrentImage(image)
   };
 
